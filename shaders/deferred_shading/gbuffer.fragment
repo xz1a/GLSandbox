@@ -1,0 +1,12 @@
+#version 330 core
+layout (location = 0) out vec3 gbuffer_position;
+layout (location = 1) out vec3 gbuffer_normal;
+
+in vec4 viewspace_position;
+in vec3 normal;
+
+void main()
+{    
+    gbuffer_position = viewspace_position.xyz;
+    gbuffer_normal = normalize(normal);
+}

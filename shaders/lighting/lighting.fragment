@@ -1,0 +1,66 @@
+#version 450 core
+
+struct Light {
+    int type;
+    vec3 color;
+    vec3 ambient;
+    vec3 position_or_direction;
+    vec3 half_vector;
+    vec3 cone_direction;
+    float spotlight_cut_off;
+    float spotlight_exponent;
+    float constant_attenuation;
+    float linear_attenuation;
+    float quadratic_attenuation;
+};
+
+const int MAX_LIGHTS = 5;
+uniform Light lights[MAX_LIGHTS];
+uniform float shininess;
+uniform float strength;
+
+in vec3 normal_viewspace;
+in vec4 position_viewspace;
+in vec4 color;
+
+out vec4 Fragment_Color;
+
+void main() {
+    vec3 scattered_light = vec3(0.0);
+    vec3 reflected_light = vec3(0.0);
+    
+    for (int i = 0; i < MAX_LIGHTS; ++i) {
+        
+        vec3 half_vector;
+        vec3 light_direction = lights[i].position_or_direction;
+        float attenuation = 1.0;
+        if (lights[i].type == 0) {
+            half_vector = lights[i].half_vector;
+        } else {
+            light_direction = lights[i].position_or_direction - vec3(position_viewspace);
+            float light_distance = length(light_direction);
+            light_direction = light_direction / light_distance;
+
+            attenuation = 1.0 / (lights[i].constant_attenuation + lights[i].linear_attenuation * light_distance + lights[i].quadratic_attenuation * light_distance * light_distance);
+            if (lights[i].type == 2) {
+                float spot_cos = dot(light_direction, -lights[i].cone_direction);
+                
+                if (spot_cos < lights[i].spotlight_cut_off) {
+                    attenuation = 0.0;
+                } else {                    
+                    attenuation *= pow(spot_cos, lights[i].spotlight_exponent);
+                }
+            }
+            half_vector = normalize(normalize(light_direction) + normalize(vec3(-position_viewspace)));
+        }
+
+        vec3 normal = normalize(normal_viewspace);
+
+        float diffuse_intensity = max(0.0, dot(normal, light_direction));
+        float specular_intensity = (diffuse_intensity == 0.0) ? 0.0 : pow(max(0.0, dot(normal, half_vector)), shininess) * strength;
+        scattered_light += lights[i].ambient * attenuation + lights[i].color * diffuse_intensity * attenuation;
+        reflected_light += lights[i].color * specular_intensity * attenuation;
+    }
+    vec3 rgb = min(color.rgb * scattered_light + reflected_light, vec3(1.0));
+    Fragment_Color = vec4(rgb, color.a);
+}

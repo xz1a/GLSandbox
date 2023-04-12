@@ -1,0 +1,19 @@
+#version 330 core
+layout (location = 0) in vec3 vertex_position;
+layout (location = 1) in vec3 vertex_normal;
+layout (location = 2) in vec2 vertex_uv;
+layout (location = 3) in vec4 vertex_color;
+
+out vec4 viewspace_position;
+out vec3 normal;
+
+uniform mat4 model_view_matrix;
+uniform mat4 projection_matrix;
+uniform mat3 normal_matrix;
+
+void main()
+{
+    viewspace_position = model_view_matrix * vec4(vertex_position, 1.0);
+    normal = normalize(normal_matrix * vertex_normal);
+    gl_Position = projection_matrix * viewspace_position;
+}

@@ -1,0 +1,12 @@
+#version 450 core
+
+uniform vec4 color;
+
+in vec3 normal_viewspace;
+in vec4 position_viewspace;
+
+out vec4 Fragment_Color;
+
+void main() {
+    Fragment_Color = vec4(normalize(normal_viewspace), 1.0);//color;
+}

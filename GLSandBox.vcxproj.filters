@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="gl3w">
+      <UniqueIdentifier>{6cfc5fbb-60bb-4049-b4ba-3c366650c5d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenGL">
+      <UniqueIdentifier>{fa81c02f-acdd-49c2-b1cc-07e013e79a85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenGL\GLShader">
+      <UniqueIdentifier>{dd2c4a87-04fb-493e-861e-8e10632ac459}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenGL\GLProgram">
+      <UniqueIdentifier>{8347bdfa-4d37-42e7-8928-92a0d13c631d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenGL\GLRenderSystem">
+      <UniqueIdentifier>{5b90728d-b845-44d7-b7f0-e7de0ffdadf1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenGL\GLVertexArray">
+      <UniqueIdentifier>{68ad509f-d257-4454-ba89-89850b378208}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{41443735-7060-4155-a112-a729255b049a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenGL\Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="OpenGL\GLBufferLayout">
+      <UniqueIdentifier>{7995a70c-d3cc-43d6-8478-cfcbcfeeeb8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenGL\GLBuffer">
+      <UniqueIdentifier>{a2e63e4a-4d12-4af2-a2f3-a64546997f20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{ee0d6ead-0f62-42c5-9a9b-4e0f1915eba2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\SimpleObjLoader">
+      <UniqueIdentifier>{797a89c3-e161-4480-8b7d-853d93a583cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenGL\GLTexture">
+      <UniqueIdentifier>{0a954a69-66b3-4a6c-a8df-42fa2ae94173}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OpenGL\GLFrameBuffer">
+      <UniqueIdentifier>{1b55f62a-b36f-40bf-ae95-b77a8715f357}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gl3w\src\gl3w.c">
+      <Filter>gl3w</Filter>
+    </ClCompile>
+    <ClCompile Include="GLShader.cpp">
+      <Filter>OpenGL\GLShader</Filter>
+    </ClCompile>
+    <ClCompile Include="GLRenderSystem.cpp">
+      <Filter>OpenGL\GLRenderSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="GLVertexArray.cpp">
+      <Filter>OpenGL\GLVertexArray</Filter>
+    </ClCompile>
+    <ClCompile Include="GLProgram.cpp">
+      <Filter>OpenGL\GLProgram</Filter>
+    </ClCompile>
+    <ClCompile Include="GLBufferLayout.cpp">
+      <Filter>OpenGL\GLBufferLayout</Filter>
+    </ClCompile>
+    <ClCompile Include="GLBuffer.cpp">
+      <Filter>OpenGL\GLBuffer</Filter>
+    </ClCompile>
+    <ClCompile Include="GLTexture.cpp">
+      <Filter>OpenGL\GLTexture</Filter>
+    </ClCompile>
+    <ClCompile Include="GLFrameBuffer.cpp">
+      <Filter>OpenGL\GLFrameBuffer</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GLShader.h">
+      <Filter>OpenGL\GLShader</Filter>
+    </ClInclude>
+    <ClInclude Include="GLProgram.h">
+      <Filter>OpenGL\GLProgram</Filter>
+    </ClInclude>
+    <ClInclude Include="GLRenderSystem.h">
+      <Filter>OpenGL\GLRenderSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="GLVertexArray.h">
+      <Filter>OpenGL\GLVertexArray</Filter>
+    </ClInclude>
+    <ClInclude Include="GLBufferLayout.h">
+      <Filter>OpenGL\GLBufferLayout</Filter>
+    </ClInclude>
+    <ClInclude Include="GLBuffer.h">
+      <Filter>OpenGL\GLBuffer</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleObjLoader.h">
+      <Filter>Utils\SimpleObjLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="GLTexture.h">
+      <Filter>OpenGL\GLTexture</Filter>
+    </ClInclude>
+    <ClInclude Include="GLFrameBuffer.h">
+      <Filter>OpenGL\GLFrameBuffer</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="basic.vertex">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="basic.fragment">
+      <Filter>Shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>
